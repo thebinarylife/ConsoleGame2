@@ -10,6 +10,13 @@ public class Room {
 	private Item[] items;
 	private HashMap<Direction, Room> connectingRooms;
 	
+	/**
+	 * Creates Room
+	 * @param id - numerical id of room
+	 * @param name - name of room
+	 * @param description - description of room
+	 * @param items - items within the room
+	 */
 	public Room(int id, String name, String description, Item[] items)
 	{
 		this.ID = id;

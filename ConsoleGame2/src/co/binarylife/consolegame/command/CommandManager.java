@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class CommandManager {
 	public ArrayList<Command> commands;
 	
+	// Initialize manager
 	public CommandManager()
 	{
 		commands = new ArrayList<>();
@@ -13,6 +14,7 @@ public class CommandManager {
 		commands.add(null);
 	}
 	
+	// Add command to manager
 	public void addCommand(Command command)
 	{
 		commands.add(command);
