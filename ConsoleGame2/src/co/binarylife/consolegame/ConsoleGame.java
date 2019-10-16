@@ -19,8 +19,7 @@ public class ConsoleGame {
 	
 	public static void initScanner() {
 		try {
-			InputStream in = null;
-			scanner = new Scanner(in);
+			scanner = new Scanner(System.in);
 		} catch (Exception e){
 			
 			System.out.println("Scanner init problem");

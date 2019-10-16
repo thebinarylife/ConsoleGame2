@@ -7,7 +7,7 @@ import co.binarylife.consolegame.player.Player;
 public class DropItemCommand extends Command {
 	
 	public DropItemCommand() {
-		super("drop", 1);
+		super("drop", 1, "drop <slot>", "Drops item in given slot.");
 	}
 	
 	@Override

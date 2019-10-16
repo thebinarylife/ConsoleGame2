@@ -8,7 +8,7 @@ import co.binarylife.consolegame.room.Room;
 public class DemoCommand extends Command {
 	
 	public DemoCommand() {
-		super("demo", 1);
+		super("demo", 1, "demo [item name]", "Demo command");
 	}
 	
 	public boolean execute(String[] args, Player player) {

@@ -1,5 +1,6 @@
 package co.binarylife.consolegame.player;
 
+import co.binarylife.consolegame.Game;
 import co.binarylife.consolegame.room.Room;
 
 public class Player {
@@ -10,6 +11,7 @@ public class Player {
 	// TODO Decide whether inventory should be created outside of player class or in player class
 	public Player(String name) {
 		inv = new Inventory(this);
+		
 		// TODO Set room
 	}
 	
@@ -27,6 +29,10 @@ public class Player {
 	
 	public Room getRoom() {
 		return currentRoom;
+	}
+	
+	public void setRoom(int id) {
+		currentRoom = Game.getRoomManager().getRoom(id);
 	}
 
 }

@@ -29,6 +29,18 @@ public abstract class Room {
 	
 	public void addConnectingRoom(Direction direction, Room room) {
 		connectingRooms.put(direction, room);
+		
+		switch(direction) {
+			case WEST:
+				room.addConnectingRoom(Direction.EAST, this);
+			case NORTH:
+				room.addConnectingRoom(Direction.SOUTH, this);
+			case SOUTH:
+				room.addConnectingRoom(Direction.NORTH, this);
+			case EAST:
+				room.addConnectingRoom(Direction.WEST, this);
+				
+		}
 	}
 	
 	public void addItem(Item item) {

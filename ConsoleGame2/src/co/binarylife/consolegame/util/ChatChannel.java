@@ -19,7 +19,7 @@ public class ChatChannel {
 	
 	public ChatChannel(Player player) {
 		this.player = player;
-		this.cm = new CommandManager();
+		cm = new CommandManager();
 	}
 	
 	public Player getPlayer() {
@@ -37,21 +37,30 @@ public class ChatChannel {
 		return line;
 	}
 	
-	public Command getCommand() {
+	public Command runCommand() {
 		// player input: get item
 		// getCommandTemplate returns { "get", "item" }
 		String[] cmdTemplate = getCommandTemplate(getInput());
+		if(cmdTemplate == null) {
+			player.sendMessage("Syntax: <cmd> [args]");
+			return null;
+		}
 		
 		// First element is command
 		Command cmd = cm.getCommand(cmdTemplate[0]);
-		if(cmd == null)
+		if(cmd == null) {
+			player.sendMessage("This command does not exist!");
 			return null;
+		}
 		
-		if(!(cmdTemplate.length - 1 >= cmd.getArgsLength()))
+		if(!(cmdTemplate.length - 1 >= cmd.getArgsLength())) {
+			player.sendMessage(cmd.getSyntax());
 			return null;
+		}
+			
 		
 		// if the length of the template is 1, there are no arguments... so just pass null to execute command
-		if(cmdTemplate.length > 1)
+		if(cmdTemplate.length < 1)
 			cmd.execute(null, player);
 		
 		String[] temp = new String[cmdTemplate.length - 1];
@@ -60,7 +69,7 @@ public class ChatChannel {
 			
 		cmd.execute(temp, player);
 		
-		return null;
+		return cmd;
 	}
 	
 	// Returns false if command was invalid
