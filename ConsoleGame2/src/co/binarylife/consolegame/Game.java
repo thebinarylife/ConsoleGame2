@@ -36,12 +36,14 @@ public class Game {
 		command = null;
 		do {
 			player.sendMessage("Type \"move WEST\"  to move to the next room!");
+			command = cc.runCommand();
 		} while(command == null || !command.getName().equalsIgnoreCase("move"));
 		// move to Demo Room
 		// drop the item
 		
 		do {
 			player.sendMessage("Drop the item (Type \"drop <slot>\"");
+			command = cc.runCommand();
 		} while(command == null || !command.getName().equalsIgnoreCase("drop"));
 		
 		ConsoleGame.scanner.nextLine();
