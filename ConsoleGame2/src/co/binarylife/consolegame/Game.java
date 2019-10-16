@@ -47,6 +47,8 @@ public class Game {
 			command = cc.runCommand();
 		} while(command == null || !command.getName().equalsIgnoreCase("drop"));
 		
+		player.sendMessage("\nThank you for playing the demo!"
+				+ "\n - The Russians");
 		ConsoleGame.scanner.nextLine();
 		
 	}
