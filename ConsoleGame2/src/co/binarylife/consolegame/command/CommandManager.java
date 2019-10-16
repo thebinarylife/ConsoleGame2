@@ -4,6 +4,8 @@ import java.util.ArrayList;
 
 import co.binarylife.consolegame.command.commands.DemoCommand;
 import co.binarylife.consolegame.command.commands.DropItemCommand;
+import co.binarylife.consolegame.command.commands.ListCommand;
+import co.binarylife.consolegame.command.commands.MoveCommand;
 
 public class CommandManager {
 	public ArrayList<Command> commands;
@@ -20,6 +22,8 @@ public class CommandManager {
 	private void initCommands() {
 		commands.add(new DemoCommand());
 		commands.add(new DropItemCommand());
+		commands.add(new MoveCommand());
+		commands.add(new ListCommand());
 	}
 	
 	// Add command to manager

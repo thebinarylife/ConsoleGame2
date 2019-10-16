@@ -15,10 +15,12 @@ public class DemoCommand extends Command {
 		Room room = player.getRoom();
 		
 		Item item = room.getItem(args[0]);
-		if(item == null)
-			return false;
-		
 		player.getInventory().setItem(0, item);
+		if(item == null) {
+			player.sendMessage(getSyntax());
+			return false;
+		}
+		
 		return true;
 	}
 

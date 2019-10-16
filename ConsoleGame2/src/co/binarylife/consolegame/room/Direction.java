@@ -15,5 +15,13 @@ public enum Direction {
 	public String getRaw() {
 		return raw; 
 	}
+	
+	public static Direction toDirection(String direction) {
+		for(Direction di : Direction.values())
+			if(di.getRaw().equalsIgnoreCase(direction))
+				return di;
+		
+		return null;
+	}
 
 }

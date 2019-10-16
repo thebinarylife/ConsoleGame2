@@ -16,24 +16,35 @@ public class Game {
 		rm = new RoomManager();
 		im = new ItemManager();
 		player = new Player("DEMO_PLAYER");
+		ConsoleGame.setChannel(new ChatChannel(player));
 		player.setRoom(0);
 		
 		// when they start send welcome message
 		sendWelcomeMessage();
 		// after, ask for a them to run the demo command
 		ChatChannel cc = ConsoleGame.getChannel();
+		player.sendMessage("");
 		
 		Command command;
 		do {
 			player.sendMessage("Type demo command! (demo <item> [type \"list\" to see all items in the room])");
 			 command = cc.runCommand();
-		} while(command != null && command.getName().equalsIgnoreCase("demo"));
+		} while(command == null || !command.getName().equalsIgnoreCase("demo"));
 		
 		// pickup the item from the starting room
 		// Make a move command
-		
+		command = null;
+		do {
+			player.sendMessage("Type \"move WEST\"  to move to the next room!");
+		} while(command == null || !command.getName().equalsIgnoreCase("move"));
 		// move to Demo Room
 		// drop the item
+		
+		do {
+			player.sendMessage("Drop the item (Type \"drop <slot>\"");
+		} while(command == null || !command.getName().equalsIgnoreCase("drop"));
+		
+		ConsoleGame.scanner.nextLine();
 		
 	}
 	

@@ -30,8 +30,12 @@ public class Inventory {
 	}
 	
 	// TODO Decide whether room should handle differentiating item or if the inventory should
-	public void pickupItem(int slot, int roomId, Item item) {
+	public void pickupItem(Item item, int slot) {
 //		Game.rm.getRoom(room)
+		
+		player.getRoom().removeItem(item);
+		setItem(slot, item);
+		
 	}
 
 }

@@ -12,8 +12,9 @@ public class ConsoleGame {
 	public static Scanner scanner;
 	
 	public static void main(String[] args) {
+		
+		initScanner();
 		// TODO initialize in correct place
-		channel = new ChatChannel(null);
 		Game game = new Game();
 	}
 	
@@ -29,6 +30,9 @@ public class ConsoleGame {
 	
 	public static ChatChannel getChannel() {
 		return channel;
+	}
+	public static void setChannel(ChatChannel chan) {
+		channel = chan;
 	}
 	
 	public static Scanner getScanner() {

@@ -1,6 +1,7 @@
 package co.binarylife.consolegame.player;
 
 import co.binarylife.consolegame.Game;
+import co.binarylife.consolegame.room.Direction;
 import co.binarylife.consolegame.room.Room;
 
 public class Player {
@@ -31,8 +32,16 @@ public class Player {
 		return currentRoom;
 	}
 	
-	public void setRoom(int id) {
-		currentRoom = Game.getRoomManager().getRoom(id);
+	public Room setRoom(int id) {
+		return setRoom(Game.getRoomManager().getRoom(id));
+	}
+	
+	public Room setRoom(Room room) {
+		return currentRoom = room;
+	}
+	
+	public Room move(Direction direction) {
+		return setRoom(currentRoom.getConnectingRoom(direction));
 	}
 
 }

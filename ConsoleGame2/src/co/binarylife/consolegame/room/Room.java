@@ -25,6 +25,7 @@ public abstract class Room {
 		this.description = description;
 		this.items = items;
 		this.connectingRooms = new HashMap<>();
+		loadItems();
 	}
 	
 	public void addConnectingRoom(Direction direction, Room room) {
@@ -53,6 +54,10 @@ public abstract class Room {
 	
 	public String getName() {
 		return name;
+	}
+	
+	public Room getConnectingRoom(Direction direction) {
+		return connectingRooms.get(direction);
 	}
 	
 	public String getDescription() {
@@ -88,5 +93,5 @@ public abstract class Room {
 	}
 	
 	public abstract void connectRooms();
-
+	protected abstract void loadItems();
 }

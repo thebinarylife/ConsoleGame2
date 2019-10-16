@@ -60,23 +60,23 @@ public class ChatChannel {
 			
 		
 		// if the length of the template is 1, there are no arguments... so just pass null to execute command
-		if(cmdTemplate.length < 1)
-			cmd.execute(null, player);
+		if(cmdTemplate.length < 1) {
+			System.out.println(cmd);
+			return cmd.execute(null, player) ? cmd : null;
+			
+		}
 		
 		String[] temp = new String[cmdTemplate.length - 1];
 		for(int i = 1; i < cmdTemplate.length; i++)
 			temp[i-1] = cmdTemplate[i];
-			
-		cmd.execute(temp, player);
-		
-		return cmd;
+		return cmd.execute(temp, player) ? cmd : null;
 	}
 	
 	// Returns false if command was invalid
 	public String[] getCommandTemplate(String line) {
 		String[] temp = line.split(" ");
 		
-		if(temp.length >= 1)
+		if(temp.length <= 1)
 			return null;
 		
 		return temp;
