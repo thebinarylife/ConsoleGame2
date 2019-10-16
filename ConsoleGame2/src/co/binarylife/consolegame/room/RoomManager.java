@@ -2,6 +2,7 @@ package co.binarylife.consolegame.room;
 
 import java.util.ArrayList;
 
+import co.binarylife.consolegame.room.rooms.DemoRoom;
 import co.binarylife.consolegame.room.rooms.StartingRoom;
 
 public class RoomManager {
@@ -9,14 +10,16 @@ public class RoomManager {
 	
 	public RoomManager() {
 		this.rooms = new ArrayList<>();
-		initRoom();
 	}
 	
-	private void initRoom() {
+	public void initRooms() {
 		rooms.add(new StartingRoom());
+		rooms.add(new DemoRoom());
 		
-		for(Room r : rooms)
+		for(Room r : rooms) {
 			r.connectRooms();
+			r.loadItems();
+		}
 	}
 	
 	public void addRoom(Room room) {

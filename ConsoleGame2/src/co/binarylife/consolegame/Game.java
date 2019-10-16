@@ -15,6 +15,7 @@ public class Game {
 		// Init Managers
 		rm = new RoomManager();
 		im = new ItemManager();
+		rm.initRooms();
 		player = new Player("DEMO_PLAYER");
 		ConsoleGame.setChannel(new ChatChannel(player));
 		player.setRoom(0);
@@ -42,7 +43,7 @@ public class Game {
 		// drop the item
 		
 		do {
-			player.sendMessage("Drop the item (Type \"drop <slot>\"");
+			player.sendMessage("Drop the item (Type \"drop <slot>\")");
 			command = cc.runCommand();
 		} while(command == null || !command.getName().equalsIgnoreCase("drop"));
 		

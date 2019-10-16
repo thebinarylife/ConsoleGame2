@@ -14,7 +14,7 @@ public class DemoRoom extends Room{
 	@Override
 	public void connectRooms() {
 		Room room = Game.getRoomManager().getRoom(0);
-		room.addConnectingRoom(Direction.WEST, this);
+		room.addConnectingRoom(Direction.WEST, this, false);
 	}
 	
 	@Override

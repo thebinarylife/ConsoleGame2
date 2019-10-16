@@ -13,8 +13,8 @@ public class MoveCommand extends Command {
 	
 	@Override
 	public boolean execute(String[] args, Player player) {
-		if(!(args[0].equalsIgnoreCase("North") || args[0].equalsIgnoreCase("south"))
-				|| args[0].equalsIgnoreCase("West") || args[0].equalsIgnoreCase("East")) {
+		if(!(args[0].equalsIgnoreCase("North") || args[0].equalsIgnoreCase("south")
+				|| args[0].equalsIgnoreCase("West") || args[0].equalsIgnoreCase("East"))) {
 			player.sendMessage(getSyntax());
 			return false;
 		}

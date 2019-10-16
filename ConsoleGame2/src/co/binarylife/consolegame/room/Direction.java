@@ -17,10 +17,10 @@ public enum Direction {
 	}
 	
 	public static Direction toDirection(String direction) {
-		for(Direction di : Direction.values())
-			if(di.getRaw().equalsIgnoreCase(direction))
+		for(Direction di : Direction.values()) {
+			if(di.getRaw().equalsIgnoreCase(direction.toLowerCase()))
 				return di;
-		
+		}
 		return null;
 	}
 

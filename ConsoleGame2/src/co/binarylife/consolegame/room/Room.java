@@ -25,21 +25,23 @@ public abstract class Room {
 		this.description = description;
 		this.items = items;
 		this.connectingRooms = new HashMap<>();
-		loadItems();
+		this.items = new ArrayList<>();
 	}
 	
-	public void addConnectingRoom(Direction direction, Room room) {
+	public void addConnectingRoom(Direction direction, Room room, boolean flag) {
 		connectingRooms.put(direction, room);
+		if(flag)
+			return;
 		
 		switch(direction) {
 			case WEST:
-				room.addConnectingRoom(Direction.EAST, this);
+				room.addConnectingRoom(Direction.EAST, this, true);
 			case NORTH:
-				room.addConnectingRoom(Direction.SOUTH, this);
+				room.addConnectingRoom(Direction.SOUTH, this, true);
 			case SOUTH:
-				room.addConnectingRoom(Direction.NORTH, this);
+				room.addConnectingRoom(Direction.NORTH, this, true);
 			case EAST:
-				room.addConnectingRoom(Direction.WEST, this);
+				room.addConnectingRoom(Direction.WEST, this, true);
 				
 		}
 	}
