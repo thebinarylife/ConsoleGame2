@@ -1,22 +1,23 @@
 package co.binarylife.consolegame.item;
 
-public class Item {
+import co.binarylife.consolegame.player.Player;
+
+public abstract class Item {
 	private int id;
 	private String name;
 	
-	public Item(int id, String name)
-	{
+	public Item(int id, String name) {
 		this.name = name;
 	}
 	
-	public int getId()
-	{
+	public int getId() {
 		return id;
 	}
 	
-	public String getName()
-	{
+	public String getName() {
 		return name;
 	}
+	
+	public abstract void use(Player player);
 
 }

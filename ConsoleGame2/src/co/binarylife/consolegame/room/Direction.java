@@ -1,4 +1,4 @@
-package co.binarylife.consolegame.rooms;
+package co.binarylife.consolegame.room;
 
 public enum Direction {
 	NORTH,

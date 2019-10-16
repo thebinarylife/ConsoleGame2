@@ -6,8 +6,7 @@ public class CommandManager {
 	public ArrayList<Command> commands;
 	
 	// Initialize manager
-	public CommandManager()
-	{
+	public CommandManager() {
 		commands = new ArrayList<>();
 		
 		// TODO Add commands
@@ -15,9 +14,21 @@ public class CommandManager {
 	}
 	
 	// Add command to manager
-	public void addCommand(Command command)
-	{
+	public void addCommand(Command command) {
 		commands.add(command);
+	}
+	
+	public Command getCommand(String cmd)
+	{
+		for(Command c : commands)
+			if(c.getName().equalsIgnoreCase(cmd))
+				return c;
+		
+		return null;
+	}
+	
+	public void removeCommand(Command command) {
+		commands.remove(command);
 	}
 
 }

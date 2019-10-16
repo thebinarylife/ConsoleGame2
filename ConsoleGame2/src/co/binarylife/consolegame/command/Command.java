@@ -5,21 +5,18 @@ public class Command {
 	private int argsLength;
 	
 	// Name of command, length of arguments
-	public Command(String name, int argsLength)
-	{
+	public Command(String name, int argsLength) {
 		this.name = name;
 		this.argsLength = argsLength;
 	}
 	
 	// Get the name of the command
-	public String getName()
-	{
+	public String getName() {
 		return name;
 	}
 	
 	// Get length of arguments
-	public int getArgsLength()
-	{
+	public int getArgsLength() {
 		return argsLength;
 	}
 

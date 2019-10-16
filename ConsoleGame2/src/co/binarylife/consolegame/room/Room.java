@@ -1,5 +1,6 @@
-package co.binarylife.consolegame.rooms;
+package co.binarylife.consolegame.room;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 import co.binarylife.consolegame.item.Item;
@@ -7,7 +8,7 @@ import co.binarylife.consolegame.item.Item;
 public class Room {
 	private final int ID;
 	private String name, description;
-	private Item[] items;
+	private ArrayList<Item> items;
 	private HashMap<Direction, Room> connectingRooms;
 	
 	/**
@@ -17,8 +18,7 @@ public class Room {
 	 * @param description - description of room
 	 * @param items - items within the room
 	 */
-	public Room(int id, String name, String description, Item[] items)
-	{
+	public Room(int id, String name, String description, ArrayList<Item> items) {
 		this.ID = id;
 		this.name = name;
 		this.description = description;
@@ -26,33 +26,31 @@ public class Room {
 		this.connectingRooms = new HashMap<>();
 	}
 	
-	public void addConnectingRoom(Direction direction, Room room)
-	{
+	public void addConnectingRoom(Direction direction, Room room) {
 		connectingRooms.put(direction, room);
 	}
 	
-	public int getId()
-	{
+	public void addItem(Item item) {
+		items.add(item);
+	}
+	
+	public int getId() {
 		return ID;
 	}
 	
-	public String getName()
-	{
+	public String getName() {
 		return name;
 	}
 	
-	public String getDescription()
-	{
+	public String getDescription() {
 		return description;
 	}
 	
-	public Item[] getItems()
-	{
+	public ArrayList<Item> getItems() {
 		return items;
 	}
 	
-	public Item getItem(String name)
-	{
+	public Item getItem(String name) {
 		for(Item i : items)
 			if(i.getName().equalsIgnoreCase(name))
 				return i;
@@ -60,13 +58,16 @@ public class Room {
 		return null;
 	}
 	
-	public Item getItem(int id)
-	{
+	public Item getItem(int id) {
 		for(Item i : items)
 			if(i.getId() == id)
 				return i;
 		
 		return null;
+	}
+	
+	public void removeItem(Item item) {
+		items.remove(item);
 	}
 
 }
