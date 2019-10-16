@@ -4,8 +4,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import co.binarylife.consolegame.item.Item;
+import co.binarylife.consolegame.player.Player;
 
-public class Room {
+public abstract class Room {
 	private final int ID;
 	private String name, description;
 	private ArrayList<Item> items;
@@ -69,5 +70,11 @@ public class Room {
 	public void removeItem(Item item) {
 		items.remove(item);
 	}
+	
+	public void sendRoomMessage(Player player) {
+		player.sendMessage(name + " " + description);
+	}
+	
+	public abstract void connectRooms();
 
 }

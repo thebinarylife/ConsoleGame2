@@ -3,10 +3,12 @@ package co.binarylife.consolegame;
 import java.io.InputStream;
 import java.util.Scanner;
 
+import co.binarylife.consolegame.command.CommandManager;
 import co.binarylife.consolegame.util.ChatChannel;
 
 public class ConsoleGame {
 	private static ChatChannel channel;
+	private static CommandManager cm;
 	public static Scanner scanner;
 	
 	public static void main(String[] args) {

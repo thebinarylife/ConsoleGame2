@@ -24,8 +24,8 @@ public class Inventory {
 		return inventory[slot];
 	}
 	
-	public void dropItem(int slot, int roomId) {
-		Game.getRoomManager().getRoom(roomId).addItem(inventory[slot]);
+	public void dropItem(int slot) {
+		player.getRoom().addItem(inventory[slot]);
 		setItem(slot, null);
 	}
 	

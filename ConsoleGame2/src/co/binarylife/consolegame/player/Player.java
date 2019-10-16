@@ -1,12 +1,16 @@
 package co.binarylife.consolegame.player;
 
+import co.binarylife.consolegame.room.Room;
+
 public class Player {
 	private String name;
 	private Inventory inv;
+	private Room currentRoom;
 	
 	// TODO Decide whether inventory should be created outside of player class or in player class
 	public Player(String name) {
 		inv = new Inventory(this);
+		// TODO Set room
 	}
 	
 	public String getName() {
@@ -19,6 +23,10 @@ public class Player {
 	
 	public void sendMessage(String message) {
 		System.out.println(message);
+	}
+	
+	public Room getRoom() {
+		return currentRoom;
 	}
 
 }

@@ -23,5 +23,11 @@ public class Game {
 	{
 		return player;
 	}
+	
+	public void sendWelcomeMessage()
+	{
+		player.sendMessage(/* message */);
+		player.sendMessage(/* ask for command demo */);
+	}
 
 }

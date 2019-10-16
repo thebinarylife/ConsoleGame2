@@ -1,6 +1,8 @@
 package co.binarylife.consolegame.command;
 
-public class Command {
+import co.binarylife.consolegame.player.Player;
+
+public abstract class Command {
 	private String name;
 	private int argsLength;
 	
@@ -19,5 +21,8 @@ public class Command {
 	public int getArgsLength() {
 		return argsLength;
 	}
+	
+	// Called when command is ran by player
+	public abstract boolean execute(String[] args, Player player);
 
 }

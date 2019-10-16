@@ -18,6 +18,7 @@ public abstract class Item {
 		return name;
 	}
 	
+	// Called everytime item is used
 	public abstract void use(Player player);
 
 }
