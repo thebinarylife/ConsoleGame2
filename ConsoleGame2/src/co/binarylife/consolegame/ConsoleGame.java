@@ -1,14 +1,11 @@
 package co.binarylife.consolegame;
 
-import java.io.InputStream;
 import java.util.Scanner;
 
-import co.binarylife.consolegame.command.CommandManager;
 import co.binarylife.consolegame.util.ChatChannel;
 
 public class ConsoleGame {
 	private static ChatChannel channel;
-	private static CommandManager cm;
 	public static Scanner scanner;
 	
 	public static void main(String[] args) {
@@ -22,8 +19,8 @@ public class ConsoleGame {
 		try {
 			scanner = new Scanner(System.in);
 		} catch (Exception e){
-			
 			System.out.println("Scanner init problem");
+			e.printStackTrace();
 			return;
 		}
 	}
@@ -31,16 +28,12 @@ public class ConsoleGame {
 	public static ChatChannel getChannel() {
 		return channel;
 	}
-	public static void setChannel(ChatChannel chan) {
-		channel = chan;
+	public static void setChannel(ChatChannel chnl) {
+		channel = chnl;
 	}
 	
 	public static Scanner getScanner() {
 		return scanner;
-	}
-	
-	public void startGame() {
-		
 	}
 
 }
