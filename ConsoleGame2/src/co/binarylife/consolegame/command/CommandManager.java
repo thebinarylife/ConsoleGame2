@@ -10,15 +10,18 @@ import co.binarylife.consolegame.command.commands.MoveCommand;
 public class CommandManager {
 	public ArrayList<Command> commands;
 	
-	// Initialize manager
+	/**
+	 * Initializes manager... 
+	 * initializes commands.
+	 */
 	public CommandManager() {
 		commands = new ArrayList<>();
 		initCommands();
-		
-		// TODO Add commands
-		commands.add(null);
 	}
 	
+	/**
+	 * Adds all commands to command ArrayList
+	 */
 	private void initCommands() {
 		commands.add(new DemoCommand());
 		commands.add(new DropItemCommand());
@@ -26,11 +29,21 @@ public class CommandManager {
 		commands.add(new ListCommand());
 	}
 	
-	// Add command to manager
+	/**
+	 * Adds command to command manager
+	 * 
+	 * @param command command to be added
+	 */
 	public void addCommand(Command command) {
 		commands.add(command);
 	}
 	
+	/**
+	 * Sorts through commands, until a command with specified name is found
+	 * 
+	 * @param cmd name of command
+	 * @return Command object with specified name, if no command is found, returns null
+	 */
 	public Command getCommand(String cmd)
 	{
 		for(Command c : commands)
@@ -40,6 +53,11 @@ public class CommandManager {
 		return null;
 	}
 	
+	/**
+	 * Remove command from command manager
+	 * 
+	 * @param command command to be removed from manager
+	 */
 	public void removeCommand(Command command) {
 		commands.remove(command);
 	}

@@ -11,6 +11,10 @@ public class Game {
 	private static ItemManager im;
 	private static Player player;
 	
+	/**
+	 * Game object
+	 * TODO Figure out game running system
+	 */
 	public Game() {
 		// Init Managers
 		rm = new RoomManager();

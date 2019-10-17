@@ -14,10 +14,10 @@ public abstract class Room {
 	
 	/**
 	 * Creates Room
-	 * @param id - numerical id of room
-	 * @param name - name of room
-	 * @param description - description of room
-	 * @param items - items within the room
+	 * @param id numerical id of room
+	 * @param name name of room
+	 * @param description description of room
+	 * @param items items within the room
 	 */
 	public Room(int id, String name, String description, ArrayList<Item> items) {
 		this.ID = id;

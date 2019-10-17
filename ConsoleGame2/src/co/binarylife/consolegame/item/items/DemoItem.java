@@ -2,7 +2,12 @@ package co.binarylife.consolegame.item.items;
 
 import co.binarylife.consolegame.item.Item;
 import co.binarylife.consolegame.player.Player;
-
+/**
+ * Demo item
+ * 
+ * @author tbl
+ *
+ */
 public class DemoItem extends Item{
 	
 	public DemoItem() {
