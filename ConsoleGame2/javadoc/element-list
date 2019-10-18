@@ -1,0 +1,9 @@
+co.binarylife.consolegame
+co.binarylife.consolegame.command
+co.binarylife.consolegame.command.commands
+co.binarylife.consolegame.item
+co.binarylife.consolegame.item.items
+co.binarylife.consolegame.player
+co.binarylife.consolegame.room
+co.binarylife.consolegame.room.rooms
+co.binarylife.consolegame.util

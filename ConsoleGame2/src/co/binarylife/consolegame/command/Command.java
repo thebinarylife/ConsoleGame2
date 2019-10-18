@@ -13,7 +13,7 @@ public abstract class Command {
 	 * 
 	 * @param name name of command
 	 * @param argsLength least amount of arguments possible
-	 * @param syntax usage (ex. "<cmd> [args]>")
+	 * @param syntax usage (ex. "cmd [args]")
 	 * @param description description of command usage
 	 */
 	public Command(String name, int argsLength, String syntax, String description){

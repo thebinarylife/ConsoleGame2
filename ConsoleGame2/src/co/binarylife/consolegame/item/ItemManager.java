@@ -66,6 +66,8 @@ public class ItemManager {
 	
 	/**
 	 * Get all items
+	 * 
+	 * @return ArrayList of all items
 	 */
 	public ArrayList<Item> getItems(){
 		return items;

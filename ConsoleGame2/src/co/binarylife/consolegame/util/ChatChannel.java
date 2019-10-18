@@ -7,36 +7,71 @@ import co.binarylife.consolegame.command.Command;
 import co.binarylife.consolegame.command.CommandManager;
 import co.binarylife.consolegame.player.Player;
 
-// TODO Determine whether this class is worth it
+/**
+ * Handles all ingoing and outgoing communication between player and game
+ * 
+ * @author tbl
+ *
+ */
 public class ChatChannel {
 	private Player player;
 	
 	private static CommandManager cm;
 	
+	/**
+	 * Gets CommandManager that handles all commands
+	 * 
+	 * @return CommandManager instance
+	 */
 	public static CommandManager getCommandManager() {
 		return cm;
 	}
 	
+	/**
+	 * Create ChatChannel object and initialize CommandManager
+	 * @param player player for channel
+	 */
 	public ChatChannel(Player player) {
 		this.player = player;
 		cm = new CommandManager();
 	}
 	
+	/**
+	 * Get Player channel was created with
+	 * 
+	 * @return player
+	 */
 	public Player getPlayer() {
 		return player;
 	}
 	
+	/**
+	 * Send message to player
+	 * 
+	 * @param msg raw string of message
+	 */
 	public void sendMessage(String msg) {
 		Message playerMessage = new Message(msg);
 		System.out.println(playerMessage.toString() + "\n");;
 	}
 	
+	/**
+	 * Get next line from player
+	 * 
+	 * @return input from player
+	 */
 	public String getInput() {
 		Scanner scanner = ConsoleGame.getScanner();
 		String line = scanner.nextLine();
 		return line;
 	}
 	
+	/**
+	 * Run a command from player
+	 * TODO CLEANUP
+	 * 
+	 * @return Command object with instance of the command the player has run... If the player has put in a command that does not exists, it returns null
+	 */
 	public Command runCommand() {
 		// player input: get item
 		// getCommandTemplate returns { "get", "item" }
@@ -71,7 +106,12 @@ public class ChatChannel {
 		return cmd.execute(temp, player) ? cmd : null;
 	}
 	
-	// Returns false if command was invalid
+	/**
+	 * Get template to be used for commands. [0] = command, [1+] are arguments
+	 * 
+	 * @param line line to be split into a command template
+	 * @return returns array of each individual word from players input line
+	 */
 	public String[] getCommandTemplate(String line) {
 		String[] temp = line.split(" ");
 		
