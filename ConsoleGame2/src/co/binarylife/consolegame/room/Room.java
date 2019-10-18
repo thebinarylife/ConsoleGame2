@@ -6,6 +6,12 @@ import java.util.HashMap;
 import co.binarylife.consolegame.item.Item;
 import co.binarylife.consolegame.player.Player;
 
+/**
+ * Room class, Inherited by all rooms
+ * 
+ * @author tbl
+ *
+ */
 public abstract class Room {
 	private final int ID;
 	private String name, description;
@@ -28,6 +34,13 @@ public abstract class Room {
 		this.items = new ArrayList<>();
 	}
 	
+	/**
+	 * Adds a connection between two rooms. CONNECTION IS CREATED FOR BOTH ROOMS. If called in one room class, the other need not call the method.
+	 * 
+	 * @param direction direction of the room to be connected
+	 * @param room room to be connected
+	 * @param flag false if being called outside the room class... do not put true
+	 */
 	public void addConnectingRoom(Direction direction, Room room, boolean flag) {
 		connectingRooms.put(direction, room);
 		if(flag)
@@ -46,30 +59,67 @@ public abstract class Room {
 		}
 	}
 	
+	/**
+	 * Adds an item to the room
+	 * 
+	 * @param item item to be added
+	 */
 	public void addItem(Item item) {
 		items.add(item);
 	}
 	
+	/**
+	 * Gets id of room
+	 * 
+	 * @return id or room
+	 */
 	public int getId() {
 		return ID;
 	}
 	
+	/**
+	 * Gets name of room
+	 * 
+	 * @return name of room
+	 */
 	public String getName() {
 		return name;
 	}
 	
+	/**
+	 * Gets connecting room in specified of direction
+	 * 
+	 * @param direction direction of connected room
+	 * @return room in specified direction... NULL if room does not exist
+	 */
 	public Room getConnectingRoom(Direction direction) {
 		return connectingRooms.get(direction);
 	}
 	
+	/**
+	 * Gets description of room
+	 * 
+	 * @return description of room
+	 */
 	public String getDescription() {
 		return description;
 	}
 	
+	/**
+	 * Gets items in room
+	 * 
+	 * @return all items in the room as an ArrayList
+	 */
 	public ArrayList<Item> getItems() {
 		return items;
 	}
 	
+	/**
+	 * Gets item in room by specified name
+	 * 
+	 * @param name name of item
+	 * @return item, NULL if not found
+	 */
 	public Item getItem(String name) {
 		for(Item i : items)
 			if(i.getName().equalsIgnoreCase(name))
@@ -78,6 +128,12 @@ public abstract class Room {
 		return null;
 	}
 	
+	/**
+	 * Gets item in room by id
+	 * 
+	 * @param id id of item
+	 * @return item found, NULL if not found
+	 */
 	public Item getItem(int id) {
 		for(Item i : items)
 			if(i.getId() == id)
@@ -86,14 +142,31 @@ public abstract class Room {
 		return null;
 	}
 	
+	/**
+	 * Removes item from room
+	 * 
+	 * @param item item to be removed
+	 */
 	public void removeItem(Item item) {
 		items.remove(item);
 	}
 	
+	/**
+	 * Sends message name and description to player
+	 * 
+	 * @param player player to recieve the message
+	 */
 	public void sendRoomMessage(Player player) {
 		player.sendMessage(name + " " + description);
 	}
 	
+	/**
+	 * Method to be implemented by all subclasses. Connects adjacent rooms.
+	 */
 	public abstract void connectRooms();
+	
+	/**
+	 * Method to be implemented to load all items in room, ran by subclasses.
+	 */
 	protected abstract void loadItems();
 }

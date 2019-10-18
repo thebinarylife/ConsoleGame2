@@ -5,6 +5,12 @@ import co.binarylife.consolegame.item.items.DemoItem;
 import co.binarylife.consolegame.room.Direction;
 import co.binarylife.consolegame.room.Room;
 
+/**
+ * Room made for demo
+ * 
+ * @author tbl
+ *
+ */
 public class DemoRoom extends Room{
 	
 	public DemoRoom() {
