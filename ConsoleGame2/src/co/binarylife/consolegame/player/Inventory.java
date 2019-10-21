@@ -1,6 +1,5 @@
 package co.binarylife.consolegame.player;
 
-import co.binarylife.consolegame.Game;
 import co.binarylife.consolegame.item.Item;
 
 /**
