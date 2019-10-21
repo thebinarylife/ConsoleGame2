@@ -24,4 +24,8 @@ public class Door extends Item implements UnmovableItem {
 		locked = false;
 	}
 	
+	public void lock() {
+		locked = true;
+	}
+	
 }
