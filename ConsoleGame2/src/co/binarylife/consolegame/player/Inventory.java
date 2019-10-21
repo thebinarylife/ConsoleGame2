@@ -11,7 +11,6 @@ import co.binarylife.consolegame.item.Item;
  */
 public class Inventory {
 	private Item[] inventory;
-	private int currentSlot;
 
 	private Player player;
 	
@@ -23,7 +22,18 @@ public class Inventory {
 	public Inventory(Player player) {
 		inventory = new Item[12];
 		this.player = player;
-		currentSlot = 0;
+	}
+	
+	public boolean isFull() {
+		for(Item i : inventory)
+			if(i == null)
+				return false;
+		
+		return true;
+	}
+	
+	public boolean isFilled(int slot) {
+		return getItem(slot) == null ? false : true;
 	}
 	
 	/**

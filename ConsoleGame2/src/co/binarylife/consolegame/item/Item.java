@@ -44,6 +44,6 @@ public abstract class Item {
 	 * Called when item is used. can be a command, when automatically used... any instance
 	 * @param player player using the item
 	 */
-	public abstract void use(Player player);
+//	public abstract void use(Player player);
 
 }
