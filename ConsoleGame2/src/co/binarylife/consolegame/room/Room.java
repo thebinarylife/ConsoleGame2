@@ -42,6 +42,7 @@ public abstract class Room {
 	 * 
 	 * @param direction direction of the room to be connected
 	 * @param room room to be connected
+	 * @param door specifies door between connected rooms
 	 * @param flag false if being called outside the room class... do not put true
 	 */
 	public void addConnectingRoom(Direction direction, Room room, Door door, boolean flag) {
