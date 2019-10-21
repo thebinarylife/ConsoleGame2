@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import co.binarylife.consolegame.item.Item;
+import co.binarylife.consolegame.item.items.Door;
 import co.binarylife.consolegame.player.Player;
 
 /**
@@ -17,6 +18,7 @@ public abstract class Room {
 	private String name, description;
 	private ArrayList<Item> items;
 	private HashMap<Direction, Room> connectingRooms;
+	private HashMap<Direction, Door> doors;
 	
 	/**
 	 * Creates Room
@@ -32,6 +34,7 @@ public abstract class Room {
 		this.items = items;
 		this.connectingRooms = new HashMap<>();
 		this.items = new ArrayList<>();
+		this.doors = new HashMap<>();
 	}
 	
 	/**
@@ -41,20 +44,24 @@ public abstract class Room {
 	 * @param room room to be connected
 	 * @param flag false if being called outside the room class... do not put true
 	 */
-	public void addConnectingRoom(Direction direction, Room room, boolean flag) {
+	public void addConnectingRoom(Direction direction, Room room, Door door, boolean flag) {
 		connectingRooms.put(direction, room);
 		if(flag)
 			return;
 		
 		switch(direction) {
 			case WEST:
-				room.addConnectingRoom(Direction.EAST, this, true);
+				room.addConnectingRoom(Direction.EAST, this, door, true);
+				break;
 			case NORTH:
-				room.addConnectingRoom(Direction.SOUTH, this, true);
+				room.addConnectingRoom(Direction.SOUTH, this, door, true);
+				break;
 			case SOUTH:
-				room.addConnectingRoom(Direction.NORTH, this, true);
+				room.addConnectingRoom(Direction.NORTH, this, door, true);
+				break;
 			case EAST:
-				room.addConnectingRoom(Direction.WEST, this, true);
+				room.addConnectingRoom(Direction.WEST, this, door, true);
+				break;
 				
 		}
 	}
