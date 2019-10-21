@@ -88,6 +88,8 @@ public class ChatChannel {
 			return null;
 		}
 		
+		// IF the length of the arguments given by the player is less than the least amount of args needed...
+		// return null bc it didnt work correctly
 		if(!(cmdTemplate.length - 1 >= cmd.getArgsLength())) {
 			player.sendMessage(cmd.getSyntax());
 			return null;
