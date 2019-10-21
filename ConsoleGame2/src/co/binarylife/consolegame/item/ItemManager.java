@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import co.binarylife.consolegame.item.items.DemoItem;
 /**
- * Manages all items
+ * Manages all items, for usage
  * 
  * @author tbl
  *
