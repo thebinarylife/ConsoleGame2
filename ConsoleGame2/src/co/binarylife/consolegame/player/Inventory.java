@@ -77,5 +77,9 @@ public class Inventory {
 		setItem(slot, item);
 		
 	}
+	
+	public Item[] getItems() {
+		return inventory;
+	}
 
 }
