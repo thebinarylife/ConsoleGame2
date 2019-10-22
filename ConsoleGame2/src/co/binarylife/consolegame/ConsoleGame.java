@@ -11,6 +11,7 @@ public class ConsoleGame {
 	public static void main(String[] args) {
 		
 		initScanner();
+		displayMainPage();
 		// TODO initialize in correct place
 		Game game = new Game();
 	}
@@ -34,6 +35,17 @@ public class ConsoleGame {
 	
 	public static Scanner getScanner() {
 		return scanner;
+	}
+	
+	public static void displayMainPage() {
+		System.out.println("Welcome Message");
+		System.out.println("Type start to start");
+		
+		String input;
+		do
+		{
+			input = scanner.nextLine();
+		} while(!input.equalsIgnoreCase("start"));
 	}
 
 }
