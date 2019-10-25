@@ -113,6 +113,14 @@ public abstract class Room {
 		return description;
 	}
 	
+	public Door getDoor(Direction direction) {
+		return doors.get(direction);
+	}
+	
+	public HashMap<Direction, Door> getDoors() {
+		return doors;
+	}
+	
 	/**
 	 * Gets items in room
 	 * 
