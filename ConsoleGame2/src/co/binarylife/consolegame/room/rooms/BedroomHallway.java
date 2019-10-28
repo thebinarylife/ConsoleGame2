@@ -22,7 +22,7 @@ public class BedroomHallway extends Room{
 	@Override
 	public void connectRooms() {
 		//addConnectingRoom(Direction.NORTH, Game.getRoomManager().getRoom(3), new Door(1, "Master Bedroom Door", null), false);
-		addConnectingRoom(Direction.SOUTH, Game.getRoomManager().getRoom(0), new Door(0, "Guest Bedroom Door", null), false);
+//		addConnectingRoom(Direction.SOUTH, Game.getRoomManager().getRoom(0), new Door(0, "Guest Bedroom Door", null), false);
 	}
 	
 	@Override

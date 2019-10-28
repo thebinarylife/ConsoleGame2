@@ -31,7 +31,7 @@ public class MoveCommand extends Command {
 			return false;
 		}
 		
-		if(newRoom.getDoor(Direction.toDirection(args[0])).isLocked()) {
+		if(player.getRoom().getDoor(Direction.toDirection(args[0])).isLocked()) {
 			player.sendMessage("The door is locked!");
 			return true;
 		}
