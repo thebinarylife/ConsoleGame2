@@ -17,7 +17,8 @@ import co.binarylife.consolegame.room.Room;
 public class GuestBedroom extends Room {
 	
 	public GuestBedroom(){
-		super(0, "GuestBedroom", "You are in a bedroom which appears no one lives in due to the lack of belongings. In the room are a bed and nightstand. Upon the nightstand you see a key", new ArrayList<>());
+		super(0, "GuestBedroom", "You are in a bedroom which appears no one lives in due to the lack of belongings. In the room are a bed and nightstand. Upon the nightstand you see a key", 
+				new ArrayList<>());
 	}
 	
 	/* Need to implement key item in this room, not 100% sure how to go about doing that yet and zach said he should have it handled - Don */
