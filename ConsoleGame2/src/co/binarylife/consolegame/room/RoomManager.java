@@ -2,8 +2,8 @@ package co.binarylife.consolegame.room;
 
 import java.util.ArrayList;
 
-import co.binarylife.consolegame.room.rooms.DemoRoom;
-import co.binarylife.consolegame.room.rooms.StartingRoom;
+import co.binarylife.consolegame.room.rooms.BedroomHallway;
+import co.binarylife.consolegame.room.rooms.GuestBedroom;
 
 public class RoomManager {
 	private ArrayList<Room> rooms;
@@ -13,8 +13,8 @@ public class RoomManager {
 	}
 	
 	public void initRooms() {
-		rooms.add(new StartingRoom());
-		rooms.add(new DemoRoom());
+		rooms.add(new GuestBedroom());
+		rooms.add(new BedroomHallway());
 		
 		for(Room r : rooms) {
 			r.connectRooms();
