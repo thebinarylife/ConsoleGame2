@@ -1,3 +1,5 @@
+//GuestBedroom
+
 package co.binarylife.consolegame.room.rooms;
 
 import java.util.ArrayList;
