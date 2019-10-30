@@ -7,20 +7,22 @@ package co.binarylife.consolegame.room;
  *
  */
 public enum Direction {
-	NORTH("north"),
-	SOUTH("south"),
-	EAST("east"),
-	WEST("west");
+	NORTH("north", "North"),
+	SOUTH("south", "South"),
+	EAST("east", "South"),
+	WEST("west", "West");
 	
 	private String raw;
+	private String readable;
 	
 	/**
 	 * Direction constructor
 	 * 
 	 * @param raw raw string of direction
 	 */
-	Direction(String raw) {
+	Direction(String raw, String readable) {
 		this.raw = raw;
+		this.readable = readable;
 	}
 	
 	/**
@@ -30,6 +32,10 @@ public enum Direction {
 	 */
 	public String getRaw() {
 		return raw; 
+	}
+	
+	public String getReadable() {
+		return readable;
 	}
 	
 	/**

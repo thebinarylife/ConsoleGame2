@@ -1,7 +1,7 @@
 package co.binarylife.consolegame.room.rooms;
 import co.binarylife.consolegame.Game;
-
 import co.binarylife.consolegame.item.items.Door;
+import co.binarylife.consolegame.item.items.Key;
 import co.binarylife.consolegame.room.Direction;
 import co.binarylife.consolegame.room.Room;
 
@@ -12,9 +12,12 @@ import co.binarylife.consolegame.room.Room;
  *
  */
 public class BedroomHallway extends Room{
+	private Key key;
 	
 	public BedroomHallway() {
-		super(1, "BedroomHallway", "You are in the center of a strange hallway that only contains two doors, to the north and south, and a stairway to the west leading downstairs, and one to the east leading to the attic.", null);
+		super(1, "BedroomHallway", "You are in the center of a strange hallway that only contains two doors, to the north and south, and a stairway to the west leading downstairs, and one to the east leading to the attic.");
+		
+		key = new Key(Game.getItemManager().getNext(), "Bedroom Key", "Key to Master Bedroom");
 	}
 	
 	@Override
@@ -26,6 +29,8 @@ public class BedroomHallway extends Room{
 	}
 	
 	@Override
-	protected void loadItems() {	}
+	protected void loadItems() {
+		addItem(key);
+	}
 
 }

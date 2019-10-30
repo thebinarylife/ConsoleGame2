@@ -3,6 +3,7 @@ package co.binarylife.consolegame.room;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import co.binarylife.consolegame.Game;
 import co.binarylife.consolegame.item.Item;
 import co.binarylife.consolegame.item.items.Door;
 import co.binarylife.consolegame.player.Player;
@@ -27,7 +28,7 @@ public abstract class Room {
 	 * @param description description of room
 	 * @param items items within the room
 	 */
-	public Room(int id, String name, String description, ArrayList<Item> items) {
+	public Room(int id, String name, String description) {
 		this.ID = id;
 		this.name = name;
 		this.description = description;
@@ -76,6 +77,7 @@ public abstract class Room {
 	 */
 	public void addItem(Item item) {
 		items.add(item);
+		Game.getItemManager().addItem(item);
 	}
 	
 	/**
@@ -172,7 +174,7 @@ public abstract class Room {
 	/**
 	 * Sends message name and description to player
 	 * 
-	 * @param player player to recieve the message
+	 * @param player player to receive the message
 	 */
 	public void sendRoomMessage(Player player) {
 		player.sendMessage(name + " " + description);
