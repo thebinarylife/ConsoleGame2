@@ -16,7 +16,7 @@ public class ListCommand extends Command{
 	public boolean execute(String[] args, Player player) {
 		ArrayList<Item> items = player.getRoom().getItems();
 		
-		player.sendMessage("Items in room: " + player.getRoom().getName());
+		player.sendMessage("Items in " + player.getRoom().getName() + ":");
 		for(Item i : items)
 			player.sendMessage(i.getName());
 		

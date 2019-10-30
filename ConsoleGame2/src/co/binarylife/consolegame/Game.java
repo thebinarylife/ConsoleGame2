@@ -29,6 +29,7 @@ public class Game {
 		
 		player = new Player(name);
 		player.setRoom(0);
+		player.sendMessage("");
 		// when they start send welcome message
 		
 //		// after, ask for a them to run the demo command

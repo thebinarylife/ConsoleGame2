@@ -53,13 +53,19 @@ public class PickupCommand extends Command {
 			return false;
 		}
 		
-		int slot = Util.toInteger(args[0]);
+		int slot = Util.toInteger(args[0]) - 1;
+		if(slot < 0 || slot > 5) {
+			player.sendMessage(getSyntax());
+			return false;
+		}
+		
 		if(player.getInventory().isFilled(slot)) {
 			player.sendMessage("That slot is already full!");
+			return false;
 		}
 		
 		player.getInventory().pickupItem(item, slot);
-		player.sendMessage(item.getName() + " is now in slot " + slot + "!");
+		player.sendMessage(item.getName() + " is now in slot " + (slot + 1) + "!");
 		return true;
 	}
 

@@ -22,7 +22,7 @@ public class BedroomHallway extends Room{
 	
 	@Override
 	public void connectRooms() {
-		addConnectingRoom(Direction.NORTH, Game.getRoomManager().getRoom(2), new Door(1, "Master Bedroom Door", null), false);
+		addConnectingRoom(Direction.NORTH, Game.getRoomManager().getRoom(2), new Door(1, "Master Bedroom Door", key), false);
 		//Don wants to know how to add the door argument without instantiating a new door, unless doors are unidirectional
 		
 		//addConnectingRoom(Direction.SOUTH, Game.getRoomManager().getRoom(0), new Door(0, "Guest Bedroom Door", null) , false);

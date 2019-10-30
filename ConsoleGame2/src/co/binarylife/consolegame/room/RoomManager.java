@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import co.binarylife.consolegame.room.rooms.BedroomHallway;
 import co.binarylife.consolegame.room.rooms.GuestBedroom;
+import co.binarylife.consolegame.room.rooms.MasterBedroom;
 
 public class RoomManager {
 	private ArrayList<Room> rooms;
@@ -15,6 +16,7 @@ public class RoomManager {
 	public void initRooms() {
 		rooms.add(new GuestBedroom());
 		rooms.add(new BedroomHallway());
+		rooms.add(new MasterBedroom());
 		
 		for(Room r : rooms) {
 			r.connectRooms();

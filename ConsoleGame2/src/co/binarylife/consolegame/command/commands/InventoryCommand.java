@@ -22,6 +22,7 @@ public class InventoryCommand extends Command {
 				player.sendMessage("\tSlot " + count + ": " + "is empty!");
 			else
 				player.sendMessage("\tSlot " + count + ": " + i.getName());
+			count++;
 		}
 		
 		return true;

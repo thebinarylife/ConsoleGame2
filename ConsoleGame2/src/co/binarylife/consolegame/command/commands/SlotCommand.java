@@ -18,12 +18,18 @@ public class SlotCommand extends Command {
 			return false;
 		}
 		
-		int i = Util.toInteger(args[0]);
+		int i = Util.toInteger(args[0]) - 1;
+		if(i < 0 || i > 5) {
+			player.sendMessage(getSyntax());
+			return true;
+		}
+			
 		Item item = player.getInventory().getItem(i);
 		if(item == null)
 			player.sendMessage("That slot is empty!");
 		else
-			player.sendMessage("Slot " + i + " has " + item.getName() + " in it.");
+			player.sendMessage("Slot " + i + " has " + item.getName() + " in it.\n" + 
+		"Item Description: " + item.getDescription());
 		
 		return true;
 	}

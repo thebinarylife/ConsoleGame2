@@ -4,8 +4,14 @@ import java.util.ArrayList;
 
 import co.binarylife.consolegame.command.commands.DemoCommand;
 import co.binarylife.consolegame.command.commands.DropItemCommand;
+import co.binarylife.consolegame.command.commands.InspectCommand;
+import co.binarylife.consolegame.command.commands.InventoryCommand;
 import co.binarylife.consolegame.command.commands.ListCommand;
+import co.binarylife.consolegame.command.commands.MapCommand;
 import co.binarylife.consolegame.command.commands.MoveCommand;
+import co.binarylife.consolegame.command.commands.PickupCommand;
+import co.binarylife.consolegame.command.commands.SlotCommand;
+import co.binarylife.consolegame.command.commands.UnlockCommand;
 
 public class CommandManager {
 	public ArrayList<Command> commands;
@@ -27,6 +33,12 @@ public class CommandManager {
 		commands.add(new DropItemCommand());
 		commands.add(new MoveCommand());
 		commands.add(new ListCommand());
+		commands.add(new InspectCommand());
+		commands.add(new InventoryCommand());
+		commands.add(new MapCommand());
+		commands.add(new PickupCommand());
+		commands.add(new SlotCommand());
+		commands.add(new UnlockCommand());
 	}
 	
 	/**

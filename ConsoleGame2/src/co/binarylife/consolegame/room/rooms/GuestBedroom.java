@@ -27,14 +27,14 @@ public class GuestBedroom extends Room {
 	/* Need to implement key item in this room, not 100% sure how to go about doing that yet and zach said he should have it handled - Don */
 	@Override
 	public void connectRooms() {
-		addConnectingRoom(Direction.NORTH, Game.getRoomManager().getRoom(1), new Door(0, "Guest Bedroom Door", null), false);
+		addConnectingRoom(Direction.NORTH, Game.getRoomManager().getRoom(1), new Door(0, "Guest Bedroom Door", key), false);
 		
 		
 	}
 	
 	@Override
 	protected void loadItems() {
-		
+		addItem(key);
 	}
 
 }

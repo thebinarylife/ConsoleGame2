@@ -10,6 +10,11 @@ public class Door extends Item implements UnmovableItem {
 	public Door(int id, String name, Key key) {
 		super(id, name, "");
 		this.key = key;
+		
+		if(key != null)
+			locked = true;
+		else
+			locked = false;
 	}
 	
 	public Key getKey() {
@@ -32,11 +37,11 @@ public class Door extends Item implements UnmovableItem {
 	public String getDescription() {
 		String s;
 		if(locked)
-			s = "LOCKED\n";
+			s = "LOCKED";
 		else
-			s = "UNLOCKED\n";
+			s = "UNLOCKED";
 		
-		return getDescription() + s;
+		return super.getDescription() + s;
 	}
 	
 }

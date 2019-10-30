@@ -19,7 +19,9 @@ public class MapCommand extends Command {
 		HashMap<Direction, Door> doors = player.getRoom().getDoors();
 		Collection<Direction> directions = doors.keySet();
 		
+		player.sendMessage("You are currently in: " + player.getRoom().getName() + "!\n");
 		player.sendMessage("Doors:");
+		
 		for(Direction d : directions) {
 			if(doors.get(d) != null)
 				player.sendMessage(d.getReadable() + " " + doors.get(d).getDescription());

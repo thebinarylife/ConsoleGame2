@@ -77,7 +77,7 @@ public abstract class Room {
 	 */
 	public void addItem(Item item) {
 		items.add(item);
-		Game.getItemManager().addItem(item);
+		System.out.println(item.getName());
 	}
 	
 	/**
@@ -141,9 +141,13 @@ public abstract class Room {
 	 * @return item, NULL if not found
 	 */
 	public Item getItem(String name) {
-		for(Item i : items)
+		for(Item i : items) {
+			if(i == null)
+				continue;
+			
 			if(i.getName().equalsIgnoreCase(name))
 				return i;
+		}
 		
 		return null;
 	}
