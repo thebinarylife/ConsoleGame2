@@ -19,5 +19,13 @@ public class Util {
 	{
 		return Integer.parseInt(o.toString());
 	}
+	
+	public static String amend(String[] arr) {
+		String amended = "";
+		for(String s : arr)
+			amended += " " + s;
+		
+		return amended.trim();
+	}
 
 }
