@@ -8,7 +8,7 @@ public class Door extends Item implements UnmovableItem {
 	private Key key;
 	
 	public Door(int id, String name, Key key) {
-		super(id, name);
+		super(id, name, "");
 		this.key = key;
 	}
 	
@@ -26,6 +26,17 @@ public class Door extends Item implements UnmovableItem {
 	
 	public void lock() {
 		locked = true;
+	}
+	
+	@Override
+	public String getDescription() {
+		String s;
+		if(locked)
+			s = "LOCKED\n";
+		else
+			s = "UNLOCKED\n";
+		
+		return getDescription() + s;
 	}
 	
 }

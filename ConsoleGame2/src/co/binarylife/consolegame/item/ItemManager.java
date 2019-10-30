@@ -1,8 +1,6 @@
 package co.binarylife.consolegame.item;
 
 import java.util.ArrayList;
-
-import co.binarylife.consolegame.item.items.DemoItem;
 /**
  * Manages all items, for usage
  * 
@@ -24,7 +22,7 @@ public class ItemManager {
 	 * Adds all items to ITEMS ArrayList
 	 */
 	private void initItems() {
-		items.add(new DemoItem());
+		
 	}
 	
 	/**
@@ -71,5 +69,9 @@ public class ItemManager {
 	 */
 	public ArrayList<Item> getItems(){
 		return items;
+	}
+	
+	public int getNext() {
+		return items.size();
 	}
 }
