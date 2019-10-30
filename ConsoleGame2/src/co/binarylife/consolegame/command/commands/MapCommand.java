@@ -2,7 +2,6 @@ package co.binarylife.consolegame.command.commands;
 
 import java.util.Collection;
 import java.util.HashMap;
-import java.util.Set;
 
 import co.binarylife.consolegame.command.Command;
 import co.binarylife.consolegame.item.items.Door;
