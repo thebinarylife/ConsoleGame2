@@ -9,6 +9,7 @@ package co.binarylife.consolegame.item;
 public abstract class Item {
 	private int id;
 	private String name;
+	private String description;
 	
 	/**
 	 * Creates new Item object
@@ -16,8 +17,10 @@ public abstract class Item {
 	 * @param id id of item (starts at 0)
 	 * @param name name of item
 	 */
-	public Item(int id, String name) {
+	public Item(int id, String name, String description) {
+		this.id = id;
 		this.name = name;
+		this.description = description;
 	}
 	
 	/**
@@ -36,6 +39,10 @@ public abstract class Item {
 	 */
 	public String getName() {
 		return name;
+	}
+	
+	public String getDescription() {
+		return description;
 	}
 	
 	/**
