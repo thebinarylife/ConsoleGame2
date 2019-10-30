@@ -25,7 +25,7 @@ public class MapCommand extends Command {
 			if(doors.get(d) != null)
 				player.sendMessage(d.getReadable() + " " + doors.get(d).getDescription());
 			else
-				player.sendMessage(d.getReadable() + "No door...");
+				player.sendMessage(d.getReadable() + "No door there...");
 		}
 		
 		return true;

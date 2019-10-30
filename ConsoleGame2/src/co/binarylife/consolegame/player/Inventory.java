@@ -23,6 +23,14 @@ public class Inventory {
 		this.player = player;
 	}
 	
+	public boolean contains(Item item) {
+		for(Item i : inventory)
+			if(i.equals(i))
+				return true;
+		
+		return false;
+	}
+	
 	public boolean isFull() {
 		for(Item i : inventory)
 			if(i == null)
@@ -63,6 +71,15 @@ public class Inventory {
 	public void dropItem(int slot) {
 		player.getRoom().addItem(inventory[slot]);
 		setItem(slot, null);
+	}
+	
+	public void removeItem(Item item) {
+		for(int i = 0; i < inventory.length; i++) {
+			if(inventory[i] == item) {
+				inventory[i] = null;
+				break;
+			}
+		}
 	}
 	
 	/**
