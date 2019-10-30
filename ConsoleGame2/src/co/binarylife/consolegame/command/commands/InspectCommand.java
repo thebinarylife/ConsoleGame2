@@ -3,7 +3,6 @@ package co.binarylife.consolegame.command.commands;
 import co.binarylife.consolegame.command.Command;
 import co.binarylife.consolegame.item.Item;
 import co.binarylife.consolegame.player.Player;
-import co.binarylife.consolegame.room.Room;
 import co.binarylife.consolegame.util.Util;
 
 public class InspectCommand extends Command {
