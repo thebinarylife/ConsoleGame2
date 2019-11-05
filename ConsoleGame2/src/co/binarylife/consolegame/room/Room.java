@@ -77,7 +77,6 @@ public abstract class Room {
 	 */
 	public void addItem(Item item) {
 		items.add(item);
-		System.out.println(item.getName());
 	}
 	
 	/**
