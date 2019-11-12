@@ -23,6 +23,8 @@ Release Notes v0,2
 - slot - gets item in slot
 - unlock - unlocks door with corresponding key
 
+## ****************************************************************************************************  ##
+
 Release Notes v0.3
 - Added the rest of the map schematic
    - Guest Bathroom
