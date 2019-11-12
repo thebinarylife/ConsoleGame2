@@ -2,8 +2,9 @@ package co.binarylife.consolegame.item.items;
 
 import co.binarylife.consolegame.Game;
 import co.binarylife.consolegame.item.Item;
+import co.binarylife.consolegame.item.UnmovableItem;
 
-public class Painting extends Item {
+public class Painting extends Item implements UnmovableItem {
 	private CandleColor[] order;
 	
 	public Painting() {

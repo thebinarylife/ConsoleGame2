@@ -6,8 +6,9 @@ import java.util.Random;
 
 import co.binarylife.consolegame.Game;
 import co.binarylife.consolegame.item.Item;
+import co.binarylife.consolegame.item.UnmovableItem;
 
-public class Candelabra extends Item {
+public class Candelabra extends Item implements UnmovableItem {
 	private Candle[] candles;
 	private CandleColor[] solutionSet;
 	private Painting painting;
