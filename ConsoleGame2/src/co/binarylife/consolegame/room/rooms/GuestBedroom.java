@@ -21,19 +21,19 @@ public class GuestBedroom extends Room {
 		super(0, "GuestBedroom",
 				"You are in a bedroom which appears no one lives in due to the lack of belongings. In the room are a bed and nightstand. Upon the nightstand you see a key");
 		
-		key = new Key(0, "Hallway Key", "Key to Bedroom Hallway");
+		key = new Key(Game.getItemManager().getNext(), "Hallway Key", "Key to Bedroom Hallway");
 	}
 	
 	/* Need to implement key item in this room, not 100% sure how to go about doing that yet and zach said he should have it handled - Don */
 	@Override
 	public void connectRooms() {
-		addConnectingRoom(Direction.NORTH, Game.getRoomManager().getRoom(1), new Door(0, "Guest Bedroom Door", key), false);
-		
+		addConnectingRoom(Direction.NORTH, Game.getRoomManager().getRoom(1), new Door("Guest Bedroom Door", key), false);
+		addConnectingRoom(Direction.WEST, Game.getRoomManager().getRoom(10), new Door("Bathroom Door", null), false);
 		
 	}
 	
 	@Override
-	protected void loadItems() {
+	public void loadItems() {
 		addItem(key);
 	}
 

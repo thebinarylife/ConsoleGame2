@@ -1,10 +1,8 @@
-package co.binarylife.consolegame.room;
+package co.binarylife.consolegame.room.rooms;
 
 import java.util.ArrayList;
 
-import co.binarylife.consolegame.room.rooms.BedroomHallway;
-import co.binarylife.consolegame.room.rooms.GuestBedroom;
-import co.binarylife.consolegame.room.rooms.MasterBedroom;
+import co.binarylife.consolegame.room.Room;
 
 public class RoomManager {
 	private ArrayList<Room> rooms;
