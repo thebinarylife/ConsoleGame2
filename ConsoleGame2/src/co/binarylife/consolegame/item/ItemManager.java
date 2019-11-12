@@ -15,16 +15,8 @@ public class ItemManager {
 	 */
 	public ItemManager() {
 		this.items = new ArrayList<>();
-		initItems();
 	}
-	
-	/**
-	 * Adds all items to ITEMS ArrayList
-	 */
-	private void initItems() {
-		
-	}
-	
+
 	/**
 	 * Adds specified item to manager
 	 * 
