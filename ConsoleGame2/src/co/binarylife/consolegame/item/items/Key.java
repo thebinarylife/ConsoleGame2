@@ -9,8 +9,8 @@ public class Key extends Item implements MovableItem {
 		super(id, name, description);
 	}
 	
-	@Override
-	public void pickup() {
-		
-	}
+//	@Override
+//	public void pickup() {
+//		
+//	}
 }
