@@ -1,5 +1,6 @@
 package co.binarylife.consolegame.item.items;
 
+import co.binarylife.consolegame.Game;
 import co.binarylife.consolegame.item.Item;
 import co.binarylife.consolegame.item.UnmovableItem;
 
@@ -7,8 +8,8 @@ public class Door extends Item implements UnmovableItem {
 	private boolean locked;
 	private Key key;
 	
-	public Door(int id, String name, Key key) {
-		super(id, name, "");
+	public Door(String name, Key key) {
+		super(Game.getItemManager().getNext(), name, "");
 		this.key = key;
 		
 		if(key != null)
