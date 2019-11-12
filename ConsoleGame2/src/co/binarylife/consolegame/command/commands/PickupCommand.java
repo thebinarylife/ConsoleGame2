@@ -2,6 +2,7 @@ package co.binarylife.consolegame.command.commands;
 
 import co.binarylife.consolegame.command.Command;
 import co.binarylife.consolegame.item.Item;
+import co.binarylife.consolegame.item.UnmovableItem;
 import co.binarylife.consolegame.player.Player;
 import co.binarylife.consolegame.room.Room;
 import co.binarylife.consolegame.util.Util;
@@ -51,6 +52,11 @@ public class PickupCommand extends Command {
 		if(item == null) {
 			player.sendMessage("That item does not exist!");
 			return false;
+		}
+		
+		if(item instanceof UnmovableItem) {
+			player.sendMessage("That item cannot be moved!");
+			return true;
 		}
 		
 		int slot = Util.toInteger(args[0]) - 1;
