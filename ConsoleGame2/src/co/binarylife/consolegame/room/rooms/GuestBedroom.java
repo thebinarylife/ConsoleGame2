@@ -3,8 +3,11 @@
 package co.binarylife.consolegame.room.rooms;
 
 import co.binarylife.consolegame.Game;
+import co.binarylife.consolegame.item.Item;
+import co.binarylife.consolegame.item.items.Candelabra;
 import co.binarylife.consolegame.item.items.Door;
 import co.binarylife.consolegame.item.items.Key;
+import co.binarylife.consolegame.item.items.Painting;
 import co.binarylife.consolegame.room.Direction;
 import co.binarylife.consolegame.room.Room;
 
@@ -29,12 +32,24 @@ public class GuestBedroom extends Room {
 	public void connectRooms() {
 		addConnectingRoom(Direction.NORTH, Game.getRoomManager().getRoom(1), new Door("Guest Bedroom Door", key), false);
 		addConnectingRoom(Direction.WEST, Game.getRoomManager().getRoom(10), new Door("Bathroom Door", null), false);
-		
 	}
 	
 	@Override
 	public void loadItems() {
 		addItem(key);
+		Item item = null;
+		for(Item i : Game.getRoomManager().getRoom(9).getItems()) {
+			if(i instanceof Painting) {
+				item = i;
+				break;
+			}
+		}
+		
+		// If we didnt find a painting, we arent going to add it to the the room...
+		if(item == null)
+			return;
+		
+		addItem(new Candelabra(Game.getItemManager().getNext(), "Candelabra", "DESCRIPTION", (Painting) item));
 	}
 
 }

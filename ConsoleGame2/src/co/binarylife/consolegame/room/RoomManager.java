@@ -1,8 +1,17 @@
-package co.binarylife.consolegame.room.rooms;
+package co.binarylife.consolegame.room;
 
 import java.util.ArrayList;
 
-import co.binarylife.consolegame.room.Room;
+import co.binarylife.consolegame.room.rooms.BedroomHallway;
+import co.binarylife.consolegame.room.rooms.DiningRoom;
+import co.binarylife.consolegame.room.rooms.GuestBathroom;
+import co.binarylife.consolegame.room.rooms.GuestBedroom;
+import co.binarylife.consolegame.room.rooms.Kitchen;
+import co.binarylife.consolegame.room.rooms.Library;
+import co.binarylife.consolegame.room.rooms.LivingRoom;
+import co.binarylife.consolegame.room.rooms.MainHall;
+import co.binarylife.consolegame.room.rooms.MasterBathroom;
+import co.binarylife.consolegame.room.rooms.MasterBedroom;
 
 public class RoomManager {
 	private ArrayList<Room> rooms;
@@ -13,8 +22,15 @@ public class RoomManager {
 	
 	public void initRooms() {
 		rooms.add(new GuestBedroom());
+		rooms.add(new GuestBathroom());
 		rooms.add(new BedroomHallway());
 		rooms.add(new MasterBedroom());
+		rooms.add(new MasterBathroom());
+		rooms.add(new LivingRoom());
+		rooms.add(new MainHall());
+		rooms.add(new Library());
+		rooms.add(new DiningRoom());
+		rooms.add(new Kitchen());
 		
 		for(Room r : rooms) {
 			r.connectRooms();

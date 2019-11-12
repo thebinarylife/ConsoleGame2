@@ -1,9 +1,8 @@
 package co.binarylife.consolegame;
 
-import co.binarylife.consolegame.command.Command;
 import co.binarylife.consolegame.item.ItemManager;
 import co.binarylife.consolegame.player.Player;
-import co.binarylife.consolegame.room.rooms.RoomManager;
+import co.binarylife.consolegame.room.RoomManager;
 import co.binarylife.consolegame.util.ChatChannel;
 
 public class Game {
@@ -19,9 +18,10 @@ public class Game {
 	 */
 	public Game() {
 		// Init Managers
-		rm = new RoomManager();
 		im = new ItemManager();
+		rm = new RoomManager();
 		rm.initRooms();
+		
 		won = false;
 		
 		System.out.print("What's your name?: ");
