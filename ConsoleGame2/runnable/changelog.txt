@@ -1,4 +1,6 @@
-Changelog v0.1 - Working demo
+ChangeLog
+
+Release Notes v0.1 - Working demo
 - Created two traversable rooms
 - Limited functionality, with a hardcoded demonstration
 
@@ -8,7 +10,7 @@ Changelog v0.1 - Working demo
 
   ## ****************************************************************************************************  ##
 
-Changelog v0,2
+Release Notes v0,2
 - Three rooms, guest room, bedroom hallway, master bedroom
 - Added keys, doors, and movable/unmovable items
 
@@ -20,3 +22,16 @@ Changelog v0,2
 - inspect - inspects items
 - slot - gets item in slot
 - unlock - unlocks door with corresponding key
+
+Release Notes v0.3
+- Added the rest of the map schematic
+   - Guest Bathroom
+   - Master Bathroom
+   - Living Room
+   - Dining Room
+   - Main Hall
+   - Library
+   - Kitchen
+ - Added Puzzle to the game :o what could it be...
+
+   
