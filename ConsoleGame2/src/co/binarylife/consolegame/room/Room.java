@@ -32,7 +32,6 @@ public abstract class Room {
 		this.ID = id;
 		this.name = name;
 		this.description = description;
-		this.items = items;
 		this.connectingRooms = new HashMap<>();
 		this.items = new ArrayList<>();
 		this.doors = new HashMap<>();
@@ -49,6 +48,8 @@ public abstract class Room {
 	public void addConnectingRoom(Direction direction, Room room, Door door, boolean flag) {
 		connectingRooms.put(direction, room);
 		doors.put(direction, door);
+		Game.getItemManager().addItem(door);
+		Game.getItemManager().addItem(door.getKey());
 		
 		if(flag)
 			return;
@@ -77,6 +78,7 @@ public abstract class Room {
 	 */
 	public void addItem(Item item) {
 		items.add(item);
+		Game.getItemManager().addItem(item);
 	}
 	
 	/**
@@ -191,5 +193,5 @@ public abstract class Room {
 	/**
 	 * Method to be implemented to load all items in room, ran by subclasses.
 	 */
-	protected abstract void loadItems();
+	public abstract void loadItems();
 }
