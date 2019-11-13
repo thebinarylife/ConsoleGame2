@@ -10,7 +10,7 @@ public class Candle extends Item implements MovableItem, PlaceableItem {
 	
 	public Candle(CandleColor color) {
 		super(Game.getItemManager().getNext(), 
-				color.toString(), "A " + color.toString() + " candle. Looks like it can fit in something...");
+				 "A " + color.toString() + " Candle", "A " + color.toString() + " candle. Looks like it can fit in something...");
 		
 		this.color = color;
 	}

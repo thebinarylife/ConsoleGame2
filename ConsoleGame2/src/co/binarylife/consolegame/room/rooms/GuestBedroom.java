@@ -5,6 +5,7 @@ package co.binarylife.consolegame.room.rooms;
 import co.binarylife.consolegame.Game;
 import co.binarylife.consolegame.item.Item;
 import co.binarylife.consolegame.item.items.Candelabra;
+import co.binarylife.consolegame.item.items.Candle;
 import co.binarylife.consolegame.item.items.Door;
 import co.binarylife.consolegame.item.items.Key;
 import co.binarylife.consolegame.item.items.Painting;
@@ -30,8 +31,8 @@ public class GuestBedroom extends Room {
 	/* Need to implement key item in this room, not 100% sure how to go about doing that yet and zach said he should have it handled - Don */
 	@Override
 	public void connectRooms() {
-		addConnectingRoom(Direction.NORTH, Game.getRoomManager().getRoom(1), new Door("Guest Bedroom Door", key), false);
-		addConnectingRoom(Direction.WEST, Game.getRoomManager().getRoom(10), new Door("Bathroom Door", null), false);
+		addConnectingRoom(Direction.NORTH, Game.getRoomManager().getRoom(2), new Door("Guest Bedroom Door", key), false);
+		addConnectingRoom(Direction.WEST, Game.getRoomManager().getRoom(1), new Door("Bathroom Door", null), false);
 	}
 	
 	@Override
@@ -49,7 +50,7 @@ public class GuestBedroom extends Room {
 		if(item == null)
 			return;
 		
-		addItem(new Candelabra(Game.getItemManager().getNext(), "Candelabra", "DESCRIPTION", (Painting) item));
+		addItem(new Candelabra((Painting) item));
 	}
 
 }

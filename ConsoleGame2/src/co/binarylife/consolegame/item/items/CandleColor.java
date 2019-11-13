@@ -1,9 +1,7 @@
 package co.binarylife.consolegame.item.items;
 
-import co.binarylife.consolegame.room.Direction;
-
 public enum CandleColor {
-	BLACK("blue"),
+	BLACK("black"),
 	WHITE("white"),
 	RED("red"),
 	GOLD("gold");

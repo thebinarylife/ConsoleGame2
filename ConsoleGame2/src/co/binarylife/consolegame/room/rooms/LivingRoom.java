@@ -14,7 +14,7 @@ public class LivingRoom extends Room {
 	@Override
 	public void connectRooms() {
 		addConnectingRoom(Direction.NORTH, Game.getRoomManager().getRoom(6), new Door("Dining Room Door", null), false);
-		addConnectingRoom(Direction.EAST, Game.getRoomManager().getRoom(8), new Door("Main Hall Door", null), false);
+		addConnectingRoom(Direction.WEST, Game.getRoomManager().getRoom(8), new Door("Main Hall Door", null), false);
 	}
 
 	@Override

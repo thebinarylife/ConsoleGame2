@@ -48,11 +48,12 @@ public abstract class Room {
 	public void addConnectingRoom(Direction direction, Room room, Door door, boolean flag) {
 		connectingRooms.put(direction, room);
 		doors.put(direction, door);
-		Game.getItemManager().addItem(door);
-		Game.getItemManager().addItem(door.getKey());
 		
 		if(flag)
 			return;
+		
+		Game.getItemManager().addItem(door);
+		Game.getItemManager().addItem(door.getKey());
 		
 		switch(direction) {
 			case WEST:
@@ -195,3 +196,5 @@ public abstract class Room {
 	 */
 	public abstract void loadItems();
 }
+
+// red gold black white

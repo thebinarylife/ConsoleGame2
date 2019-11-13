@@ -5,7 +5,7 @@ import co.binarylife.consolegame.room.Room;
 public class GuestBathroom extends Room {
 	
 	public GuestBathroom() {
-		super(10, "Guest Bathroom", "DESCRIPTION");
+		super(1, "Guest Bathroom", "DESCRIPTION");
 	}
 
 	@Override

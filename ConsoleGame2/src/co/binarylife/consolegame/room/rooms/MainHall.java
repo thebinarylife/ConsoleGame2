@@ -13,7 +13,7 @@ public class MainHall extends Room{
 	
 	@Override
 	public void connectRooms() {
-		addConnectingRoom(Direction.EAST, Game.getRoomManager().getRoom(9), new Door("Library Door", null), false);
+		addConnectingRoom(Direction.WEST, Game.getRoomManager().getRoom(9), new Door("Library Door", null), false);
 		
 	}
 	
@@ -24,4 +24,6 @@ public class MainHall extends Room{
 	}
 
 }
+
+// gold red white black
 

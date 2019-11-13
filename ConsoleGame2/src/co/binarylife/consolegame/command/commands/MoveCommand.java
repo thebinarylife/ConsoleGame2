@@ -24,20 +24,24 @@ public class MoveCommand extends Command {
 		}
 		Room oldRoom = player.getRoom();
 		
+		Room newRoom = oldRoom.getConnectingRoom(Direction.toDirection(args[0]));
+		if(newRoom == null) {
+			player.sendMessage("Theres no room there!");
+			return false;
+		}
+		
 		if(oldRoom.getDoor(Direction.toDirection(args[0])).isLocked()) {
 			player.sendMessage("The door is locked!");
 			return true;
 		}
 		
+		player.move(Direction.toDirection(args[0]));
+		
 		// Otherwise... move the player to the new Room and send the player information about the room
-		Room newRoom = player.move(Direction.toDirection(args[0]));
-		if(newRoom == null) {
-			player.sendMessage("Theres no room there!");
-			return false;
-		}
 		
 		player.sendMessage(newRoom.getName() + ": " + newRoom.getDescription());
 		return true;
 	}
 
 }
+// white gold red black

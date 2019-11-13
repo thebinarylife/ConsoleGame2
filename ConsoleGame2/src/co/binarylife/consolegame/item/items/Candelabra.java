@@ -2,6 +2,7 @@ package co.binarylife.consolegame.item.items;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Random;
 
 import co.binarylife.consolegame.Game;
@@ -16,16 +17,30 @@ public class Candelabra extends Item implements UnmovableItem, HolderItem, Light
 	private CandleColor[] solutionSet;
 	private Painting painting;
 
-	public Candelabra(int id, String name, String description, Painting painting) {
-		super(id, name, description);
+	public Candelabra(Painting painting) {
+		super(Game.getItemManager().getNext(), "Candelabra", "Looks like a antique candelabra... With some candles.");
 		candles = new Candle[4];
 		this.painting = painting;
+		this.solutionSet = new CandleColor[4];
 		setupCandles();
 		rearrangeSet();
 	}
 	
 	public Painting getLinkedPainting() {
 		return painting;
+	}
+	
+	@Override
+	public String getDescription() {
+		String desc = super.getDescription() + " ";
+		for(Candle c : candles) {
+			if(c == null)
+				continue;
+			
+			desc += " " + c.getColor().toString();
+	}
+		
+		return desc += ". Hmm...";
 	}
 	
 	public boolean lightCandles() {
@@ -38,7 +53,21 @@ public class Candelabra extends Item implements UnmovableItem, HolderItem, Light
 	
 	public void rearrangeSet() {
 		Random r = new Random();
-		ArrayList<CandleColor> candles = (ArrayList<CandleColor>) Arrays.asList(solutionSet);
+		
+		if(solutionSet == null) 
+			for(int i = 0; i < 4; i++)
+				solutionSet[i] = this.candles[i].getColor();
+		
+		ArrayList<CandleColor> candles = new ArrayList<>();
+		for(Candle c : this.candles) {
+			if(c == null)
+				continue;
+			
+			candles.add(c.getColor());
+		}
+		
+		candles.add(CandleColor.WHITE);
+		
 		CandleColor[] newSet = new CandleColor[4];
 		for(int i = 0; i < 4; i++) {
 			int cint = r.nextInt(candles.size());
@@ -46,6 +75,7 @@ public class Candelabra extends Item implements UnmovableItem, HolderItem, Light
 			candles.remove(cint);
 		}
 		
+		solutionSet = newSet;
 		painting.setOrder(solutionSet);
 	}
 	

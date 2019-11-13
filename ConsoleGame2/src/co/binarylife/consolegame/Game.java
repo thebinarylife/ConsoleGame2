@@ -1,5 +1,6 @@
 package co.binarylife.consolegame;
 
+import co.binarylife.consolegame.command.Command;
 import co.binarylife.consolegame.item.ItemManager;
 import co.binarylife.consolegame.player.Player;
 import co.binarylife.consolegame.room.RoomManager;
@@ -31,7 +32,8 @@ public class Game {
 		player.setRoom(0);
 		player.sendMessage("");
 		// when they start send welcome message
-		
+		sendWelcomeMessage();
+		sendInstructions();
 //		// after, ask for a them to run the demo command
 //		
 //		Command command;
@@ -91,10 +93,16 @@ public class Game {
 				"use, get, open, and the four cardinal directions."/* ask for command demo */);
 		player.getRoom().sendRoomMessage(player);
 	}
+	
 	public void sendInstructions()
-	{
-		player.sendMessage("");
-	}
+    {
+        player.sendMessage("");
+        player.sendMessage("In this game you will use commands such as:\r\n" +
+                "use, get, open, and the four cardinal directions."/* ask for command demo */);
+        player.sendMessage("While traversing this abandoned mansion you will use commands such as: \r\n" +
+                "drop, inspect, inventory, list, map, move, pickup, place, slot, sort, and unlock. "
+                + "\r\nThere might also be others that aren't mentioned but require you to figure it out.");
+    }
 	
 	public boolean isWon() {
 		return won;
