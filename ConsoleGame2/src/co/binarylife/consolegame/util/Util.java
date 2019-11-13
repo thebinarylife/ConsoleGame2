@@ -22,8 +22,12 @@ public class Util {
 	
 	public static String amend(String[] arr) {
 		String amended = "";
-		for(String s : arr)
+		for(String s : arr) {
+			if(s == null)
+				continue;
+			
 			amended += " " + s;
+		}
 		
 		return amended.trim();
 	}
