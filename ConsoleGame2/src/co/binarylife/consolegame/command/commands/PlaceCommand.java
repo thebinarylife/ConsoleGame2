@@ -44,8 +44,8 @@ public class PlaceCommand extends Command {
 			return false;
 		}
 		
-		
-		
+		HolderItem hItem = (HolderItem) item;
+		hItem.onItemPlace(slotItem);
 		return true;
 	}
 

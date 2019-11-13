@@ -18,5 +18,9 @@ public class Candle extends Item implements MovableItem, PlaceableItem {
 	public CandleColor getColor() {
 		return color;
 	}
+	
+	public void setColor(CandleColor color) {
+		this.color = color;
+	}
 
 }

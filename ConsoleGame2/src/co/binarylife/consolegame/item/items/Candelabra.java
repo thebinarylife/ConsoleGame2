@@ -55,6 +55,11 @@ public class Candelabra extends Item implements UnmovableItem, HolderItem, Light
 		candles[2] = new Candle(CandleColor.RED);
 	}
 	
+	public void setCandleOrder(CandleColor[] order) {
+		for(int i = 0; i < 4; i++) 
+			this.candles[i].setColor(order[i]);
+	}
+	
 	public void setSolutionSet(CandleColor[] set) {
 		this.solutionSet = set;
 	}
