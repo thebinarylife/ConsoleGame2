@@ -67,9 +67,6 @@ public class ConsoleGame {
 	
 	public static void displayMainPage() {
 		System.out.println("Welcome Message\n");
-		
-		initializeGameJolt();
-		
 		System.out.println("Type start to start");
 		
 		String input;
