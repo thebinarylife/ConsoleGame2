@@ -35,5 +35,10 @@ Release Notes v0.3
    - Library
    - Kitchen
  - Added Puzzle to the game :o what could it be...
+ 
+ Commands
+ - sort - sorts candles
+ - light - lights candelabra
+ - place - places candle
 
    
