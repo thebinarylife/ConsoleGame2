@@ -26,7 +26,7 @@ public class LightCommand extends Command {
 		}
 		
 		Candelabra candelabra = (Candelabra) item;
-		candelabra.lightCandles();
+		candelabra.onLight(player);
 		
 		return true;
 	}
