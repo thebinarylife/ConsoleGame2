@@ -8,7 +8,7 @@ public class Painting extends Item implements UnmovableItem {
 	private CandleColor[] order;
 	
 	public Painting() {
-		super(Game.getItemManager().getNext(), "Painting?", "Theres an old faded painting of just colors...");
+		super(Game.getItemManager().getNext(), "Painting", "Theres an old faded painting of just colors...");
 	}
 	
 	@Override
