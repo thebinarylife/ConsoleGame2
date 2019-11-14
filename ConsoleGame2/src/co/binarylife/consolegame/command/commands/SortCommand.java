@@ -36,18 +36,29 @@ public class SortCommand extends Command {
 		args[2] = null;
 		args[3] = null;
 		
-		Item item = player.getRoom().getItem(Util.amend(args));
+		String itemString = Util.amend(args);
+		if(itemString == null) {
+			player.sendMessage(getSyntax());
+			return false;
+		}
+		
+		Item item = player.getRoom().getItem(itemString);
 		if(item == null) {
 			player.sendMessage("That item does not exist!");
 			return false;
 		}
 		
 		if(!(item instanceof Candelabra)) {
-			player.sendMessage("This item cannot be lit!");
+			player.sendMessage("This item cannot be sorted!");
 			return false;
 		}
 		
 		Candelabra candelabra = (Candelabra) item;
+		if(candelabra.getCandles().length != 4) {
+			player.sendMessage("A candle is missing!");
+			return false;
+		}
+		
 		candelabra.setCandleOrder(colors);
 		
 		player.sendMessage("The candles are now arranged in the following order:");
@@ -60,3 +71,5 @@ public class SortCommand extends Command {
 	}
 
 }
+
+// red black gold white

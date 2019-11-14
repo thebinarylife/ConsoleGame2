@@ -6,11 +6,14 @@ import co.binarylife.consolegame.command.commands.DemoCommand;
 import co.binarylife.consolegame.command.commands.DropItemCommand;
 import co.binarylife.consolegame.command.commands.InspectCommand;
 import co.binarylife.consolegame.command.commands.InventoryCommand;
+import co.binarylife.consolegame.command.commands.LightCommand;
 import co.binarylife.consolegame.command.commands.ListCommand;
 import co.binarylife.consolegame.command.commands.MapCommand;
 import co.binarylife.consolegame.command.commands.MoveCommand;
 import co.binarylife.consolegame.command.commands.PickupCommand;
+import co.binarylife.consolegame.command.commands.PlaceCommand;
 import co.binarylife.consolegame.command.commands.SlotCommand;
+import co.binarylife.consolegame.command.commands.SortCommand;
 import co.binarylife.consolegame.command.commands.UnlockCommand;
 
 public class CommandManager {
@@ -39,6 +42,9 @@ public class CommandManager {
 		commands.add(new PickupCommand());
 		commands.add(new SlotCommand());
 		commands.add(new UnlockCommand());
+		commands.add(new PlaceCommand());
+		commands.add(new SortCommand());
+		commands.add(new LightCommand());
 	}
 	
 	/**

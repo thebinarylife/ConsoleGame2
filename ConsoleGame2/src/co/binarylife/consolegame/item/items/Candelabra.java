@@ -26,6 +26,10 @@ public class Candelabra extends Item implements UnmovableItem, HolderItem, Light
 		rearrangeSet();
 	}
 	
+	public Candle[] getCandles() {
+		return candles;
+	}
+	
 	public Painting getLinkedPainting() {
 		return painting;
 	}
@@ -86,8 +90,10 @@ public class Candelabra extends Item implements UnmovableItem, HolderItem, Light
 	}
 	
 	public void setCandleOrder(CandleColor[] order) {
-		for(int i = 0; i < 4; i++) 
+		System.out.println(this.candles + " " + candles.length);
+		for(int i = 0; i < 4; i++) {
 			this.candles[i].setColor(order[i]);
+		}
 	}
 	
 	public void setSolutionSet(CandleColor[] set) {
@@ -96,6 +102,8 @@ public class Candelabra extends Item implements UnmovableItem, HolderItem, Light
 
 	@Override
 	public void onItemPlace(Item item) {
+		Candle candle = (Candle) item;
+		candles[3] = candle;
 		Game.getPlayer().sendMessage("Hm.... Sounds like I heard something click...\nMaybe I could should shed some light on the subject...");
 	}
 
@@ -110,5 +118,6 @@ public class Candelabra extends Item implements UnmovableItem, HolderItem, Light
 		player.sendMessage("You have solved the puzzle!"); // TODO whats next!
 	}
 	
-
 }
+
+// gold black white red

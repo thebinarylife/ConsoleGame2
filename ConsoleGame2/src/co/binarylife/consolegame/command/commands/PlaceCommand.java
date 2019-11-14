@@ -20,7 +20,7 @@ public class PlaceCommand extends Command {
 			return false;
 		}
 		
-		int i = Util.toInteger(args[0]);
+		int i = Util.toInteger(args[0]) - 1;
 		Item slotItem = player.getInventory().getItem(i);
 		if(slotItem == null) {
 			player.sendMessage("There is no item in that slot!");
@@ -50,3 +50,5 @@ public class PlaceCommand extends Command {
 	}
 
 }
+
+// gold black red white
